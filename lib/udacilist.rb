@@ -31,6 +31,16 @@ class UdaciList
     end
   end
 
+  def filter(type)
+    for item in @items
+      if type == "event" && item.is_a?(EventItem)
+        # do nothing
+      else
+        @items.delete(item)
+      end
+    end
+  end
+
   def all
     if @title == nil
       @title = "Untitled list"
