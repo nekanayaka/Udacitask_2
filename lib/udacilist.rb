@@ -4,10 +4,11 @@ class UdaciList
   def initialize(options={})
     @title = options[:title]
     @items = []
+    
   end
   def add(type, description, options={})
     type = type.downcase
-    if options[:priority] == "low" || options[:priority] == "medium" || options[:priority] == "high"
+    if options[:priority] == "low" || options[:priority] == "medium" || options[:priority] == "high" || options[:priority] == nil
       # proceed.
     else
       raise UdaciListErrors::InvalidPriorityValue, "Invalid priority!"
@@ -30,9 +31,12 @@ class UdaciList
     end
   end
   def all
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+    if @title == nil
+      @title = "Untitled list"
+      puts "-" * @title.length
+      puts @title
+      puts "-" * @title.length
+    end
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
