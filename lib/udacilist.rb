@@ -4,7 +4,7 @@ class UdaciList
   def initialize(options={})
     @title = options[:title]
     @items = []
-    
+
   end
   def add(type, description, options={})
     type = type.downcase
@@ -13,7 +13,7 @@ class UdaciList
     else
       raise UdaciListErrors::InvalidPriorityValue, "Invalid priority!"
     end
-    
+
     if type == "todo" || type == "event" || type == "link"
       @items.push TodoItem.new(description, options) if type == "todo"
       @items.push EventItem.new(description, options) if type == "event"
@@ -21,7 +21,7 @@ class UdaciList
     else
       raise UdaciListErrors::InvalidItemType, "Invalid item"
     end
-    
+
   end
   def delete(index)
     if (index - 1) < @items.length
@@ -30,13 +30,16 @@ class UdaciList
       raise UdaciListErrors::IndexExceedsListSize, "Index exceeds the list size!"
     end
   end
+
   def all
     if @title == nil
       @title = "Untitled list"
-      puts "-" * @title.length
-      puts @title
-      puts "-" * @title.length
+    else
+      # do nothing
     end
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
