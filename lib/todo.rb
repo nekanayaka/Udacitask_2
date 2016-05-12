@@ -16,9 +16,9 @@ class TodoItem
     @due ? @due.strftime("%D") : "No due date"
   end
   def format_priority
-    value = " ⇧" if @priority == "high"
-    value = " ⇨" if @priority == "medium"
-    value = " ⇩" if @priority == "low"
+    value = " ⇧".colorize(:green) if @priority == "high"
+    value = " ⇨" .colorize(:blue) if @priority == "medium"
+    value = " ⇩".colorize(:red)  if @priority == "low"
     value = "" if !@priority
     return value
   end
