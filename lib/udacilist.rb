@@ -32,12 +32,17 @@ class UdaciList
   end
 
   def filter(type)
+    event_items = []
     for item in @items
       if type == "event" && item.is_a?(EventItem)
-        # do nothing
-      else
-        @items.delete(item)
+        event_items.push(item)
+      # else
+        # @items.delete(item)
       end
+    end
+    puts
+    for item in event_items
+      puts "#{item.description}\tevent dates: #{item.start_date} #{"--" if item.end_date} #{item.end_date}"
     end
   end
 
