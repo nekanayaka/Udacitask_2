@@ -52,9 +52,12 @@ class UdaciList
     else
       # do nothing
     end
-    puts "-" * @title.length
-    puts @title
-    puts "-" * @title.length
+    artii_title = Artii::Base.new
+    # artii_title = artii_obj.asciify()
+    puts "-" * @title.length # artii_title.asciify(@title).length
+    # puts @title
+    puts artii_title.asciify(@title)
+    puts "-" * @title.length # artii_title.asciify(@title).length
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
