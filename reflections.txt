@@ -1,13 +1,19 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+  I used the Artii gem to generate ASCII art list titles instead of text.
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) The filter method returns the filtered event items.
+  b) If a title is not given when when creating a list "Untitled List" is printed instead of blank.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+  About a day.
 2. What was the most rewarding challenge you conquered?
+  There wasn't a big challenge I encounted in this project.
 3. What two additional features did you build? Why?
+  a) The filter method returns the filtered event items.
+  b) If a title is not given when when creating a list "Untitled List" is printed instead of blank.
 4. Where do you still have room to grow?
+  Using ruby specific syntax.
