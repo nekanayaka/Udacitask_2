@@ -4,7 +4,6 @@ class UdaciList
   def initialize(options={})
     @title = options[:title]
     @items = []
-
   end
   def add(type, description, options={})
     type = type.downcase
