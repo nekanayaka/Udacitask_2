@@ -6,4 +6,10 @@ class LinkItem
     @description = url
     @site_name = options[:site_name]
   end
+  
+  format_description(@description)
+  
+  format_name(@site_name)
+  
+  details(@description)
 end

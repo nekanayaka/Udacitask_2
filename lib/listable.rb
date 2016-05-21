@@ -1,6 +1,6 @@
 module Listable
-  def format_description
-    "#{@description}".ljust(25)
+  def format_description(description)
+    "#{description}".ljust(25)
   end
   def format_date(options={})
     due = options[:due] if options[:due] != nill
@@ -16,10 +16,10 @@ module Listable
     end
     return dates
   end
-  def details
-    if @description == "event"
+  def details(description)
+    if description == "event"
       format_description + "event dates: " + format_date
-    elsif @description == "link"
+    elsif description == "link"
        format_description + "site name: " + format_name
     else
       format_description + "due: " +
@@ -27,14 +27,14 @@ module Listable
       format_priority
     end
   end
-  def format_name
-    @site_name ? @site_name : ""
+  def format_name(site_name)
+    site_name ? site_name : ""
   end
-  def format_priority
-    value = " ⇧".colorize(:red) if @priority == "high"
-    value = " ⇨" .colorize(:yellow) if @priority == "medium"
-    value = " ⇩".colorize(:green)  if @priority == "low"
-    value = "" if !@priority
+  def format_priority(priority)
+    value = " ⇧".colorize(:red) if priority == "high"
+    value = " ⇨" .colorize(:yellow) if priority == "medium"
+    value = " ⇩".colorize(:green)  if priority == "low"
+    value = "" if !priority
     return value
   end
 end
