@@ -7,13 +7,9 @@ class TodoItem
     @due = options[:due] ? Chronic.parse(options[:due]) : options[:due]
     @priority = options[:priority]
   end
-  
-  format_description(@description)
-  
-  format_date(due: @due)
-  
-  format_priority(@priority)
-  
-  details(@description)
-
+  def details
+    format_description(@description)
+    format_date(due: @due) 
+    format_priority(@priority)
+  end
 end
