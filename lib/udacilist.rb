@@ -32,16 +32,29 @@ class UdaciList
 
   def filter(type)
     event_items = []
+    link_item = []
+    todo_item = []
+    
     for item in @items
       if type == "event" && item.is_a?(EventItem)
         event_items.push(item)
       # else
         # @items.delete(item)
+      elsif type == "todo" && item.is_a?(TodoItem)
+        todo_item.push(item)
+      elsif type == "link" && item.is_a?(LinkItem)
+        link_item.push(item)
       end
     end
     puts
     for item in event_items
       puts "#{item.description}\tevent dates: #{item.start_date} #{"--" if item.end_date} #{item.end_date}"
+    end
+    for item in link_item
+      puts "#{item.description}\tsite_name: #{item.site_name}"
+    end
+    for item in todo_item
+      puts "#{item.description}\tdue: #{item.due} #{item.priority}"
     end
   end
 
