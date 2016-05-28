@@ -57,6 +57,14 @@ class UdaciList
       puts item.details
     end
   end
+  
+  def set_priority(item_description, new_priority)
+    for item in @items
+      if item.description == item_description && item.is_a?(TodoItem)
+        item.priority = new_priority
+      end
+    end
+  end
 
   def all
     if @title == nil

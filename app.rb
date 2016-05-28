@@ -51,5 +51,5 @@ new_list.filter("event")
 
 # PRIORITY OVERRIDE
 # -----------------
-new_list.items[2].priority = "low"
-puts new_list.items[2].priority
+new_list.set_priority("Buy groceries", "low")
+new_list.all
