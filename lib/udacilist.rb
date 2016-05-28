@@ -48,13 +48,13 @@ class UdaciList
     end
     puts
     for item in event_items
-      puts "#{item.description}\tevent dates: #{item.start_date} #{"--" if item.end_date} #{item.end_date}"
+      puts item.details
     end
     for item in link_item
-      puts "#{item.description}\tsite_name: #{item.site_name}"
+      puts item.details
     end
     for item in todo_item
-      puts "#{item.description}\tdue: #{item.due} #{item.priority}"
+      puts item.details
     end
   end
 
