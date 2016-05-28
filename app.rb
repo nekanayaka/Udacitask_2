@@ -48,3 +48,8 @@ new_list.all
 new_list.filter("event")
 
 # new_list.all
+
+# PRIORITY OVERRIDE
+# -----------------
+new_list.items[2].priority = "low"
+puts new_list.items[2].priority
