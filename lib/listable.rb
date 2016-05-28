@@ -12,7 +12,8 @@ module Listable
       dates << " -- " + @end_date.strftime("%D") if end_date
       dates = "N/A" if !dates
     else
-      due ? @due.strftime("%D") : "No due date"
+      dates = due ? @due.strftime("%D") : "No due date"
+      # dates = @due
     end
     return dates
   end
