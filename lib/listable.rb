@@ -2,6 +2,9 @@ module Listable
   def format_description(description)
     "#{description}".ljust(25)
   end
+  def format_type(type)
+    "(#{type}) "
+  end
   def format_date(options={})
     due = options[:due] if options[:due] != nil
     start_date = options[:start_date] if options[:start_date] != nil

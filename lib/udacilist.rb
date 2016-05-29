@@ -14,9 +14,9 @@ class UdaciList
     end
 
     if type == "todo" || type == "event" || type == "link"
-      @items.push TodoItem.new(description, options) if type == "todo"
-      @items.push EventItem.new(description, options) if type == "event"
-      @items.push LinkItem.new(description, options) if type == "link"
+      @items.push TodoItem.new("todo", description, options) if type == "todo"
+      @items.push EventItem.new("event", description, options) if type == "event"
+      @items.push LinkItem.new("link", description, options) if type == "link"
     else
       raise UdaciListErrors::InvalidItemType, "Invalid item"
     end
